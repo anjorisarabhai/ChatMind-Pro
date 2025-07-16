@@ -1,6 +1,6 @@
 # 🤖 ChatMind Pro
 
-ChatMind Pro is an intelligent, file-aware, sentiment-sensitive chatbot web application built with Python and Flask. It can chat like a human, detect user emotions, read files like PDFs or Excel sheets, and respond smartly using free AI APIs like OpenAI GPT and Google Gemini.
+ChatMind Pro is an intelligent, file-aware, sentiment-sensitive chatbot web application built with Python and Flask. It can chat like a human, detect user emotions, read files like PDFs or Excel sheets, and respond smartly using free AI APIs like **OpenAI GPT** and **Google Gemini**.
 
 ---
 
@@ -16,7 +16,7 @@ A smooth web-based interface to interact with the chatbot.
 Understands greetings and emotional tone using NLP tools like TextBlob/NLTK.
 
 ✅ **AI-Powered Responses**  
-Integrates with OpenAI GPT API and Gemini API for realistic replies (via free tier).
+Integrates with both **OpenAI GPT API** and **Google Gemini API** for realistic replies (via free tier).
 
 ✅ **File Upload Support**  
 Reads `.txt`, `.pdf`, `.csv`, `.xlsx`, and even `.pptx` files. The bot can answer based on the file content.
@@ -36,7 +36,7 @@ Uses HTML, CSS, and JavaScript for a polished user experience.
 | Backend     | Python, Flask      |
 | Frontend    | HTML, CSS, JS      |
 | Database    | SQLite             |
-| AI/NLP      | TextBlob, NLTK, OpenAI API, Gemini API |
+| AI/NLP      | TextBlob, NLTK, OpenAI GPT API, Google Gemini API |
 | File Parsing| PyMuPDF, pandas, python-pptx |
 | Deployment  | GitHub + (optional Render, Replit) |
 
@@ -72,7 +72,7 @@ chatmind-pro/
 
 ```bash
 # Install Flask and dependencies
-py -3.10 -m pip install flask textblob pandas python-pptx pymupdf
+py -3.10 -m pip install flask textblob pandas python-pptx pymupdf openai google-generativeai
 
 # Run the Flask app
 py -3.10 app.py
@@ -84,7 +84,8 @@ Visit [http://127.0.0.1:5000](http://127.0.0.1:5000) to use the app.
 
 ## 🧠 Planned Upgrades
 
-- [ ] Google Gemini API integration
+- [x] OpenAI GPT API integration (✅ Free-tier supported)
+- [x] Google Gemini API integration (✅ Free-tier supported)
 - [ ] File-based chat context (like ChatGPT with PDFs)
 - [ ] Conversation history viewer per user
 - [ ] Admin dashboard to monitor users/chats
