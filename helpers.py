@@ -56,17 +56,8 @@ import google.generativeai as genai
 
 def get_gemini_response(message):
     try:
-        model = genai.GenerativeModel("models/gemini-pro")
-
-        def generate():
-            return model.generate_content(message).text
-
-        # Limit Gemini to 10 seconds
-        with concurrent.futures.ThreadPoolExecutor() as executor:
-            future = executor.submit(generate)
-            return future.result(timeout=10)
-
-    except concurrent.futures.TimeoutError:
-        return "Gemini Error: The response took too long. Please try a shorter question."
+        model = genai.GenerativeModel("models/gemini-1.5-flash-latest")
+        response = model.generate_content(message)
+        return response.text
     except Exception as e:
         return f"Gemini Error: {str(e)}"
