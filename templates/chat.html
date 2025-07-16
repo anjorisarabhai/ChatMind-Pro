@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ChatMind Pro</title>
+    <style>
+        body { font-family: sans-serif; margin: 40px; }
+        input[type=text] { width: 300px; padding: 10px; }
+        button { padding: 10px 20px; }
+        .chatbox { margin-top: 30px; }
+        .chatbox p { margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h1>🤖 ChatMind Pro</h1>
+    <form method="POST">
+        <input type="text" name="message" placeholder="Type something..." required>
+        <button type="submit">Send</button>
+    </form>
+
+    <div class="chatbox">
+        {% if user %}
+            <p><strong>You:</strong> {{ user }}</p>
+        {% endif %}
+        {% if sentiment %}
+            <p><strong>Sentiment:</strong> {{ sentiment }}</p>
+        {% endif %}
+        {% if bot %}
+            <p><strong>Rule-based Reply:</strong> {{ bot }}</p>
+        {% elif gpt %}
+            <p><strong>OpenAI GPT Reply:</strong> {{ gpt }}</p>
+        {% elif gemini %}
+            <p><strong>Gemini Reply:</strong> {{ gemini }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
